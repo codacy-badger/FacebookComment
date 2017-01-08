@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GhoSter FacebookComment
+ *
+ * @package        GhoSter_FacebookComment
+ * @author         GhoSter
+ * @copyright      Copyright (c) 2016, GhoSter Inc<thinghost.info>. All rights reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <facebook_comment>
+            <general>
+                <enable>1</enable>
+                <tab_title>Facebook Comment</tab_title>
+                <facebook_theme>light</facebook_theme>
+            </general>
+        </facebook_comment>
+    </default>
+</config>
