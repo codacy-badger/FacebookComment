@@ -39,6 +39,7 @@ class ProductTab extends AbstractProduct {
         $_isEnabled = $this->_config->getValue('facebook_comment/general/enable');
         if ($_isEnabled) {
             $this->setTemplate('facebook_comment/product_tab.phtml');
+            $this->setColorSchema();
         } else {
             $this->getLayout()->unsetElement('facebook.comment.tab');
         }
@@ -59,5 +60,17 @@ class ProductTab extends AbstractProduct {
             $this->setData('title', __('Facebook Comment'));
 
         }
+    }
+
+    /**
+     * Set Color Schema Theme
+     *
+     * @return void
+     */
+    public function setColorSchema(){
+
+        $color = $this->_config->getValue('facebook_comment/general/facebook_theme');
+        $this->setData('theme', $color);
+
     }
 }

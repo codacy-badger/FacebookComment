@@ -12,7 +12,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="GhoSter_FacebookComment::extension">
+                <resource id="GhoSter_FacebookComment::ghoster">
                     <resource id="GhoSter_FacebookComment::facebook_comment" title="GhoSter Facebook Comment" sortOrder="1000" />
                 </resource>
                 <resource id="Magento_Backend::stores">
