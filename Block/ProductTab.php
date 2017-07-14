@@ -24,6 +24,7 @@ class ProductTab extends AbstractProduct {
 
         $this->_config = $context->getScopeConfig();
         $this->setProductTabTitle();
+        $this->setFacebookAppId();
     }
 
 
@@ -72,5 +73,16 @@ class ProductTab extends AbstractProduct {
         $color = $this->_config->getValue('facebook_comment/general/facebook_theme');
         $this->setData('theme', $color);
 
+    }
+
+
+    /**
+     * Facebook App Id
+     *
+     * @return void
+     */
+    public function setFacebookAppId() {
+        $appId = $this->_config->getValue('facebook_comment/general/app_id');
+        $this->setData('app_id', $appId);
     }
 }
