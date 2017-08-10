@@ -10,8 +10,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
     <menu>
-        <add id="GhoSter_FacebookComment::ghoster" title="GhoSter Inc" module="GhoSter_FacebookComment" sortOrder="70" resource="GhoSter_FacebookComment::ghoster" />
-        <add id="GhoSter_FacebookComment::facebook_comment" title="Product Facebook Comment Settings" module="GhoSter_FacebookComment" sortOrder="50" resource="GhoSter_FacebookComment::facebook_comment" parent="GhoSter_FacebookComment::ghoster"/>
+        <add id="GhoSter_FacebookComment::facebook_comment" title="Product Facebook Comment Settings" module="GhoSter_FacebookComment" sortOrder="50" resource="GhoSter_FacebookComment::facebook_comment" parent="GhoSter_Core::ghoster"/>
         <add id="GhoSter_FacebookComment::config" title="Configuration" module="GhoSter_FacebookComment" parent="GhoSter_FacebookComment::facebook_comment" sortOrder="10" action="adminhtml/system_config/edit/section/facebook_comment" resource="GhoSter_FacebookComment::config"/>
     </menu>
 </config>
