@@ -1,18 +1,9 @@
 <?xml version="1.0"?>
-<!--
-/**
- * GhoSter FacebookComment
- *
- * @package        GhoSter_FacebookComment
- * @author         GhoSter
- * @copyright      Copyright (c) 2016, GhoSter Inc<thinghost.info>. All rights reserved
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="GhoSter_FacebookComment" setup_version="1.0.0">
+    <module name="GhoSter_FacebookComment" setup_version="1.0.3">
         <sequence>
-            <module name="GhoSter_Core" />
             <module name="Magento_Catalog"/>
+            <module name="Magento_Review"/>
         </sequence>
     </module>
 </config>

@@ -2,7 +2,7 @@
     "name": "ghoster/facebook-comment",
     "description": "Adds an extra tab to the Magento 2 Product View page with Facebook Comment Edit",
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": [
       "OSL-3.0",
       "AFL-3.0"
@@ -13,7 +13,7 @@
     "authors": [
         {
             "name": "Tuyen Nguyen",
-            "homepage": "http://www.thinghost.info/",
+            "homepage": "https://www.thinghost.info/",
             "role": "Developer"
         }
     ],

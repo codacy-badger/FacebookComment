@@ -1,20 +1,9 @@
 <?xml version="1.0"?>
-<!--
-/**
- * GhoSter FacebookComment
- *
- * @package        GhoSter_FacebookComment
- * @author         GhoSter
- * @copyright      Copyright (c) 2016, GhoSter Inc<thinghost.info>. All rights reserved
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="GhoSter_FacebookComment::ghoster">
-                    <resource id="GhoSter_FacebookComment::facebook_comment" title="GhoSter Facebook Comment" sortOrder="1000" />
-                </resource>
+                <resource id="GhoSter_FacebookComment::facebook_comment" title="GhoSter Facebook Comment" sortOrder="1000" />
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">

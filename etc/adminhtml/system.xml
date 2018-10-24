@@ -1,13 +1,4 @@
 <?xml version="1.0"?>
-<!--
-/**
- * GhoSter FacebookComment
- *
- * @package        GhoSter_FacebookComment
- * @author         GhoSter
- * @copyright      Copyright (c) 2016, GhoSter Inc<thinghost.info>. All rights reserved
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="ghoster" sortOrder="200">
@@ -19,26 +10,50 @@
             <resource>GhoSter_FacebookComment::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Product Facebook Comment</label>
-                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Module</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="app_id" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="app_id" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Facebook App ID</label>
+                    <comment><![CDATA[You can generate Your App Id <a href="https://developers.facebook.com/docs/apps/#register" target="_blank">here</a>]]></comment>
                     <depends>
                         <field id="enable">1</field>
                     </depends>
                 </field>
-                <field id="tab_title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="tab_title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Detail Tab Title</label>
                     <comment>Set title for detail tab on the product page. Default value: "Facebook Comment"</comment>
                     <depends>
                         <field id="enable">1</field>
                     </depends>
                 </field>
-                <field id="facebook_theme" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="theme" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Facebook Theme Scheme</label>
                     <source_model>GhoSter\FacebookComment\Model\Config\Source\Theme</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="num_posts" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Post on Current View</label>
+                    <validate>validate-number validate-not-negative-number</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="order_by" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order By</label>
+                    <source_model>GhoSter\FacebookComment\Model\Config\Source\Order</source_model>
+                    <comment><![CDATA[See FAQ about the order <a href="https://developers.facebook.com/docs/plugins/comments/#sorting" target="_blank">here</a>]]></comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="locale" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Locale</label>
+                    <source_model>GhoSter\FacebookComment\Model\Config\Source\Locale</source_model>
+                    <comment><![CDATA[See supported locale list <a href="https://developers.facebook.com/docs/messenger-platform/messenger-profile/supported-locales/" target="_blank">here</a>]]></comment>
                     <depends>
                         <field id="enable">1</field>
                     </depends>
