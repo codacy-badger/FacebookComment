@@ -58,6 +58,10 @@
                         <field id="enable">1</field>
                     </depends>
                 </field>
+                <field id="show_face" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Avatar Face</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
         </section>
     </system>

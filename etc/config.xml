@@ -10,6 +10,7 @@
                 <num_posts>8</num_posts>
                 <order_by>social</order_by>
                 <locale>en_US</locale>
+                <show_face>1</show_face>
             </general>
         </facebook_comment>
     </default>

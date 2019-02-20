@@ -1,0 +1,25 @@
+<?php /** @var $block \GhoSter\FacebookComment\Block\Container */?>
+
+<div id="ghoster-catalog-product-view-facebook-comment-container"></div>
+
+<script type="text/javascript">
+    require(['prototype'], function(){
+        var url = <?php /* @noEscape */ echo \Zend_Json::encode($block->getAjaxUrl());?>;
+        new Ajax.Request(url, {
+            method: 'get',
+            loaderArea: false,
+            parameters: {
+                form_key: <?php /* @noEscape */ echo \Zend_Json::encode($block->getFormKey());?>,
+                request_id: new Date().getTime()
+            },
+            onComplete: function(response) {
+                try {
+                    eval("var json = " + response.responseText + " || {}");
+                } catch (e) {
+                    return;
+                }
+                $('ghoster-catalog-product-view-facebook-comment-container').update(json.block);
+            }
+        });
+    });
+</script>
