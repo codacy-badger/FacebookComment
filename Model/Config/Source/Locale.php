@@ -2,7 +2,13 @@
 
 namespace GhoSter\FacebookComment\Model\Config\Source;
 
-class Locale extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
+use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
+
+/**
+ * Class Locale
+ * @package GhoSter\FacebookComment\Model\Config\Source
+ */
+class Locale extends AbstractSource
 {
     /**
      * @var array

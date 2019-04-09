@@ -3,11 +3,14 @@
 namespace GhoSter\FacebookComment\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\Phrase;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\Serialize\Serializer\Json;
 
+/**
+ * Class Config
+ * @package GhoSter\FacebookComment\Model
+ */
 class Config
 {
     const CACHE_TAG = 'ghoster_facebookcomment';
@@ -49,8 +52,7 @@ class Config
         ScopeConfigInterface $scopeConfig,
         StoreManagerInterface $storeManager,
         Json $serialize
-    )
-    {
+    ) {
         $this->scopeConfig = $scopeConfig;
         $this->storeManager = $storeManager;
         $this->serialize = $serialize;
@@ -67,8 +69,8 @@ class Config
 
     public function getTabTitle()
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_TAB_TITLE, ScopeInterface::SCOPE_STORE) ?
-            $this->scopeConfig->getValue(static::XML_PATH_TAB_TITLE, ScopeInterface::SCOPE_STORE) : __('Facebook Comment');
+        $config = $this->scopeConfig->getValue(static::XML_PATH_TAB_TITLE, ScopeInterface::SCOPE_STORE);
+        return $config ? $config : __('Facebook Comment');
     }
 
     public function getTheme()
@@ -84,20 +86,20 @@ class Config
 
     public function getLimitPost()
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE) ?
-            $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE) : self::DEFAULT_LIMIT_NUM_OF_POST;
+        $config = $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE);
+        return $config ? $config : self::DEFAULT_LIMIT_NUM_OF_POST;
     }
 
     public function getSortBy()
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE) ?
-            $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE) : self::DEFAULT_SORT_BY;
+        $config = $this->scopeConfig->getValue(static::XML_PATH_LIMIT_NUM_OF_POST, ScopeInterface::SCOPE_STORE);
+        return $config ? $config : self::DEFAULT_SORT_BY;
     }
 
     public function getLocale()
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_LOCALE, ScopeInterface::SCOPE_STORE) ?
-            $this->scopeConfig->getValue(static::XML_PATH_LOCALE, ScopeInterface::SCOPE_STORE) : self::DEFAULT_LOCALE;
+        $config = $this->scopeConfig->getValue(static::XML_PATH_LOCALE, ScopeInterface::SCOPE_STORE);
+        return $config ? $config : self::DEFAULT_LOCALE;
     }
 
     public function getShowFace()

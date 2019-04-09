@@ -2,6 +2,8 @@
 
 namespace GhoSter\FacebookComment\Controller;
 
+use Magento\Framework\App\Action\Action;
+
 /**
  * Abstract Class Comment
  *
@@ -9,7 +11,7 @@ namespace GhoSter\FacebookComment\Controller;
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-abstract class Comment extends \Magento\Framework\App\Action\Action
+abstract class Comment extends Action
 {
     /**
      * @var \Magento\Customer\Model\Session
@@ -75,8 +77,7 @@ abstract class Comment extends \Magento\Framework\App\Action\Action
         \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator,
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\Stdlib\DateTime\DateTime $dateTime
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->_customerSession = $customerSession;
         $this->_customer = $customer;

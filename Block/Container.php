@@ -3,16 +3,24 @@
 namespace GhoSter\FacebookComment\Block;
 
 use Magento\Catalog\Model\Product;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Registry;
+use Magento\PageCache\Model\Config as PageCacheConfig;
+use Magento\Framework\Data\Form\FormKey;
 use GhoSter\FacebookComment\Model\Config as FacebookCommentConfig;
 
-class Container extends \Magento\Framework\View\Element\Template
+/**
+ * Class Container
+ * @package GhoSter\FacebookComment\Block
+ */
+class Container extends Template
 {
 
     /** @var FacebookCommentConfig */
     protected $config;
 
     /**
-     * @var \Magento\PageCache\Model\Config
+     * @var PageCacheConfig
      */
     protected $_pageCacheConfig;
 
@@ -24,32 +32,31 @@ class Container extends \Magento\Framework\View\Element\Template
     /**
      * Core registry
      *
-     * @var \Magento\Framework\Registry
+     * @var Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Framework\Data\Form\FormKey
+     * @var FormKey
      */
     protected $_formKey;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param Template\Context $context
      * @param FacebookCommentConfig $config
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\PageCache\Model\Config $pageCacheConfig
-     * @param \Magento\Framework\Data\Form\FormKey $formKey
+     * @param Registry $registry
+     * @param PageCacheConfig $pageCacheConfig
+     * @param FormKey $formKey
      * @param array $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
+        Template\Context $context,
         FacebookCommentConfig $config,
-        \Magento\PageCache\Model\Config $pageCacheConfig,
-        \Magento\Framework\Data\Form\FormKey $formKey,
-        \Magento\Framework\Registry $registry,
+        PageCacheConfig $pageCacheConfig,
+        FormKey $formKey,
+        Registry $registry,
         array $data = []
-    )
-    {
+    ) {
         $this->_pageCacheConfig = $pageCacheConfig;
         $this->config = $config;
         $this->_coreRegistry = $registry;

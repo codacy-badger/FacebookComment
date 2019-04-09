@@ -1,7 +1,14 @@
 <?php
+
 namespace GhoSter\FacebookComment\Model\Config\Source;
 
-class Theme implements \Magento\Framework\Option\ArrayInterface
+use Magento\Framework\Option\ArrayInterface;
+
+/**
+ * Class Theme
+ * @package GhoSter\FacebookComment\Model\Config\Source
+ */
+class Theme implements ArrayInterface
 {
 
     /**
@@ -11,6 +18,9 @@ class Theme implements \Magento\Framework\Option\ArrayInterface
      */
     public function toOptionArray()
     {
-        return ['light' => 'Light', 'dark' => 'Dark'];
+        return [
+            'light' => 'Light',
+            'dark' => 'Dark'
+        ];
     }
 }

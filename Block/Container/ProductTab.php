@@ -5,8 +5,15 @@ namespace GhoSter\FacebookComment\Block\Container;
 use Magento\Catalog\Model\Product;
 use GhoSter\FacebookComment\Model\Config as FacebookCommentConfig;
 use Magento\Framework\View\Element\Template;
+use Magento\Framework\DataObject\IdentityInterface;
+use Magento\Framework\Registry;
+use Magento\Framework\Data\Form\FormKey;
 
-class ProductTab extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
+/**
+ * Class ProductTab
+ * @package GhoSter\FacebookComment\Block\Container
+ */
+class ProductTab extends Template implements IdentityInterface
 {
     /** @var FacebookCommentConfig */
     protected $config;
@@ -19,12 +26,12 @@ class ProductTab extends \Magento\Framework\View\Element\Template implements \Ma
     /**
      * Core registry
      *
-     * @var \Magento\Framework\Registry
+     * @var Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Framework\Data\Form\FormKey
+     * @var FormKey
      */
     protected $_formKey;
 
@@ -34,23 +41,22 @@ class ProductTab extends \Magento\Framework\View\Element\Template implements \Ma
      *
      * @param Template\Context $context
      * @param FacebookCommentConfig $config
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\Form\FormKey $formKey
+     * @param Registry $registry
+     * @param FormKey $formKey
      * @param array $data
      */
-   public function __construct(
-       Template\Context $context,
-       FacebookCommentConfig $config,
-       \Magento\Framework\Registry $registry,
-       \Magento\Framework\Data\Form\FormKey $formKey,
-       array $data = []
-   )
-   {
-       $this->config = $config;
-       $this->_coreRegistry = $registry;
-       $this->_formKey = $formKey;
-       parent::__construct($context, $data);
-   }
+    public function __construct(
+        Template\Context $context,
+        FacebookCommentConfig $config,
+        Registry $registry,
+        FormKey $formKey,
+        array $data = []
+    ) {
+        $this->config = $config;
+        $this->_coreRegistry = $registry;
+        $this->_formKey = $formKey;
+        parent::__construct($context, $data);
+    }
 
 
     /**
@@ -89,14 +95,15 @@ class ProductTab extends \Magento\Framework\View\Element\Template implements \Ma
         return $this->config->getLocale();
     }
 
-    public function getShowFace(){
+    public function getShowFace()
+    {
         return $this->config->getShowFace();
     }
 
     /**
      * Retrieve Product URL using UrlDataObject
      *
-     * @param \Magento\Catalog\Model\Product $product
+     * @param Product $product
      * @param array $additional the route params
      * @return string
      */
@@ -115,7 +122,7 @@ class ProductTab extends \Magento\Framework\View\Element\Template implements \Ma
     /**
      * Check Product has URL
      *
-     * @param \Magento\Catalog\Model\Product $product
+     * @param Product $product
      * @return bool
      */
     public function hasProductUrl($product)
