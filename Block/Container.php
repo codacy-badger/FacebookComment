@@ -2,6 +2,7 @@
 
 namespace GhoSter\FacebookComment\Block;
 
+use Magento\Framework\View\Element\Template\Context;
 use Magento\Catalog\Model\Product;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Registry;
@@ -42,7 +43,7 @@ class Container extends Template
     protected $_formKey;
 
     /**
-     * @param Template\Context $context
+     * @param Context $context
      * @param FacebookCommentConfig $config
      * @param Registry $registry
      * @param PageCacheConfig $pageCacheConfig
@@ -50,7 +51,7 @@ class Container extends Template
      * @param array $data
      */
     public function __construct(
-        Template\Context $context,
+        Context $context,
         FacebookCommentConfig $config,
         PageCacheConfig $pageCacheConfig,
         FormKey $formKey,
@@ -64,7 +65,8 @@ class Container extends Template
         parent::__construct($context, $data);
 
         if ($this->config) {
-            $this->setTitle($this->config->getTabTitle());
+            $this->setTabTitle();
+            $this->setTabSortOrder();
         }
     }
 
@@ -81,7 +83,7 @@ class Container extends Template
 
 
     /**
-     * @return Product
+     * @return $this|mixed
      */
     public function getProduct()
     {
@@ -91,12 +93,43 @@ class Container extends Template
         return $this->_product;
     }
 
+    /**
+     * Url of Ajax Request while processing under Full page cache
+     *
+     * @return string
+     */
     public function getAjaxUrl()
     {
-        return $this->getUrl('fbcomment/comment/commentlist', [
+        return $this->getUrl('fbcomment/comment/listcomment', [
             'product' => $this->getProduct()->getId(),
             '_secure' => $this->_request->isSecure()
         ]);
+    }
+
+    /**
+     * Set Facebook Tab order
+     * @return mixed
+     */
+    public function setTabSortOrder()
+    {
+        if ($this->getData('sort_order') == null) {
+            return $this->setData('sort_order', 100);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Facebook Tab title
+     * @return Container
+     */
+    public function setTabTitle()
+    {
+        if ($this->config->getTabTitle() !== null) {
+            return $this->setData('title', $this->config->getTabTitle());
+        }
+
+        return $this;
     }
 
     /**

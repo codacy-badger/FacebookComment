@@ -70,34 +70,9 @@ class ProductTab extends Template implements IdentityInterface
         return $this->_product;
     }
 
-    public function getTheme()
+    public function getFacebookCommentConfig(): FacebookCommentConfig
     {
-        return $this->config->getTheme();
-    }
-
-    public function isEnabled()
-    {
-        return $this->config->isEnabled();
-    }
-
-    public function getNumberOfPost()
-    {
-        return $this->config->getLimitPost();
-    }
-
-    public function getSortBy()
-    {
-        return $this->config->getSortBy();
-    }
-
-    public function getLocale()
-    {
-        return $this->config->getLocale();
-    }
-
-    public function getShowFace()
-    {
-        return $this->config->getShowFace();
+        return $this->config;
     }
 
     /**

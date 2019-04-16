@@ -75,8 +75,8 @@ class Config
 
     public function getTheme()
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_THEME, ScopeInterface::SCOPE_STORE) ?
-            $this->scopeConfig->getValue(static::XML_PATH_THEME, ScopeInterface::SCOPE_STORE) : self::DEFAULT_THEME;
+        $config = $this->scopeConfig->getValue(static::XML_PATH_THEME, ScopeInterface::SCOPE_STORE);
+        return $config ? $config : self::DEFAULT_THEME;
     }
 
     public function getAppId()
@@ -105,7 +105,6 @@ class Config
     public function getShowFace()
     {
         $isShowFace = (bool)$this->scopeConfig->getValue(static::XML_PATH_SHOW_FACE, ScopeInterface::SCOPE_STORE);
-
         return $isShowFace ? self::DEFAULT_SHOW_FACE : 'false';
     }
 }
