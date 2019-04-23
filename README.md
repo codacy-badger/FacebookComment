@@ -6,6 +6,7 @@
 Adds an extra tab to the Magento 2 Product View page with Facebook Comment 
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea1efe6afaac4d52be1c7406d820ec0c)](https://www.codacy.com/app/GhoSterInc/FacebookComment?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tuyennn/FacebookComment&amp;utm_campaign=Badge_Grade)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/thinghost)
 ![Version 1.1.1](https://img.shields.io/badge/Version-1.1.1-green.svg)
 
